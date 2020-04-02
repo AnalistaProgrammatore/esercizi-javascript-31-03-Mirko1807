@@ -37,13 +37,14 @@ let clock = new Clock({template: 'h:m:s'})
 clock.start()
 **/
 
-class Clock {
-    constructor (format){
+class Clock 
+{
+    constructor (format)
+  {
         this.format=format
-   
-   
-}
-render(){
+  }
+render()
+  {
     let date= new Date
     let hours = date.getHours()
     if (hours < 10) hours = '0' + hours
@@ -57,15 +58,12 @@ render(){
         .replace('h', hours)
         .replace('m', mins)
         .replace('s', secs))
-   
-   
-}
-start(format){
-    this.render(format)
+   }
+start()
+  {
     setInterval(clock.render,1000)
-}
+  }
 }
 format="h:m:s"
 let clock= new Clock(format)
-clock.start(format)
-
+clock.start()
